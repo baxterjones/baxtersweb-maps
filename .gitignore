@@ -1,0 +1,5 @@
+# Build output
+dist/
+
+# Release ZIPs
+*.zip

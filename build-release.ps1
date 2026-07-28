@@ -1,5 +1,5 @@
 $Plugin = "baxtersweb-maps"
-$Version = "1.1.10"
+$Version = "1.1.11"
 
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Dist = Join-Path $Root "dist"
@@ -15,6 +15,7 @@ $ExcludeDirs = @(
     ".git",
     ".github",
     ".wordpress-org",
+    "codex-plugin",
     "dist",
     "build"
 )
