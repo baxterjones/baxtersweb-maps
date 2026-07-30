@@ -4,8 +4,6 @@ icon: stars
 
 # Getting Started
 
-Welcome to Baxtersweb Maps.
-
 This guide will walk you through the essential steps to create and display your first interactive map.
 
 By the end of this guide, you'll have a working map with route points or points of interest displayed on your website.
