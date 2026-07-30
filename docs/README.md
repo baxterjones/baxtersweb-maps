@@ -7,7 +7,7 @@ icon: house-heart
 
 # Home
 
-Baxtersweb Maps makes it easy to create interactive maps with routes and points of interest using familiar WordPress tools.
+[Baxtersweb Maps](https://wordpress.org/plugins/baxtersweb-maps/) makes it easy to create interactive maps with routes and points of interest using familiar WordPress tools.
 
 Whether you're building a travel itinerary, hiking trail, delivery route, tourism guide or event map, the plugin integrates with ACF Pro to let you manage map content directly from the WordPress editor.
 
