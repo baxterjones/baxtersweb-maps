@@ -1,97 +1,101 @@
 ---
 description: >-
-  The Setup screen allows you to configure Baxtersweb Maps before creating your
-  first map.
+  Baxtersweb Maps is managed from Tools → Baxtersweb Maps in the WordPress
+  admin. The plugin includes four tabs that guide you through configuring your
+  maps, routing and display settings.
 icon: gear
 ---
 
 # Setup
 
-Here you can create the required ACF fields, choose where those fields should be added, customise the appearance of your maps and preview your changes before saving.
+### Overview
 
-Navigate to:
+The **Overview** tab helps you prepare your website for creating maps.
 
-**Tools → Baxtersweb Maps**
+From here you can:
 
-### Creating the ACF Fields
+* Check that **ACF Pro** is installed and active.
+* Check that **ACF OpenStreetMap Field** is installed and active.
+* Select or create the ACF field group used for your maps.
+* Create the required map fields automatically.
+* View the current setup status.
 
-Before you can use Baxtersweb Maps, the required ACF fields must be created.
+Once your field group has been prepared, you can begin adding maps to your content.
 
-The plugin gives you two options:
+### Routing
 
-* Create a new ACF Field Group.
-* Add the required fields to an existing ACF Field Group.
+The **Routing** tab controls how routes are generated.
 
-#### Create a New Field Group
+By default, Baxtersweb Maps connects markers using straight lines.
 
-If you're setting up Baxtersweb Maps for the first time, creating a dedicated field group is the recommended option.
+If you want roads to be followed automatically, you can connect an OpenRouteService API key.
 
-Enter a name for your new field group, then click **Add or update missing fields**.
+From this page you can:
 
-The plugin will automatically generate all required fields.
+* Add or update your API key.
+* Test the connection.
+* Refresh existing saved routes.
+* View the current routing status.
 
-#### Use an Existing Field Group
+Road-following routing is optional. Without an API key, maps continue to work using straight-line routes.
 
-If your content already uses ACF, you can add the Baxtersweb Maps fields to one of your existing field groups.
+### Styles
 
-Simply select the option for **Add fields to an existing group** then choose the existing field group from the list and click **Add or update missing fields**.
+The **Styles** tab controls the default appearance of your maps.
 
-This allows all of your custom fields to remain together within a single editing screen.
+Available options include:
 
-> **Note:** After creating the fields, make sure your selected field group is assigned to the post types where you intend to use Baxtersweb Maps.
+* Route colour.
+* Route marker colour.
+* Route marker text colour.
+* Point of Interest marker colour.
+* Default Point of Interest icon.
+* Map height.
+* Border radius.
+* Marker sequence.
+* Route visibility.
+* Point of Interest visibility.
+* Point of Interest clustering.
 
-### Map Preview
+These defaults are applied to every map unless overridden by shortcode options.
 
-The built-in preview allows you to see how your settings affect the appearance of your maps before applying them across your website.
+### Help & Data
 
-After changing a setting, review the preview to ensure the results match your design.
+The **Help & Data** tab provides additional resources and maintenance options.
 
-### Map Height
+Here you can:
 
-Choose the default height for your maps.
+* View links to the documentation.
+* Open the live demo.
+* Review the required data structure.
+* Configure uninstall behaviour.
 
-Larger maps work well for full-width layouts, while smaller heights are often better suited to compact content areas.
+This tab is also useful when setting up the plugin on a new website or preparing it for handover.
 
-### Route Colour
+### Creating the Map Fields
 
-Choose the default colour used to draw the route between your route points.
+Before creating your first map, you'll need to create the required ACF fields.
 
-For the best readability, select a colour that contrasts well with the map background.
+From the **Overview** tab:
 
-### Marker Colour
+1. Select an existing ACF Field Group, or create a new one.
+2. Click **Create ACF Fields**.
+3. The required Route and Point of Interest fields will be added automatically.
 
-Set the default colour for your route markers.
+You can add these fields to existing content types or use them in a dedicated field group.
 
-Choose a colour that is easy to identify on both light and dark map areas.
+### Recommended Workflow
 
-### Marker Label Colour
+For the best experience:
 
-Select the colour used for the marker labels.
+1. Install the required plugins.
+2. Open **Tools → Baxtersweb Maps**.
+3. Create the required ACF fields.
+4. Configure your preferred map styles.
+5. (Optional) Connect OpenRouteService for road-following routes.
+6. Add map data to your content.
+7. Display the map using the provided shortcode.
 
-Using a high-contrast combination improves readability for your visitors.
+Following this workflow ensures your maps are ready to use with minimal configuration.
 
-### Point of Interest Labels
-
-Configure how point of interest labels appear on the map.
-
-Keep labels short and descriptive so they remain easy to read.
-
-### Saving Your Settings
-
-Once you're satisfied with your configuration, click **Save Changes**.
-
-Your settings will become the default for all maps created with Baxtersweb Maps.
-
-### Best Practices
-
-For the best results, we recommend:
-
-* Create the ACF fields before creating your first map.
-* Assign your field group to the appropriate post types.
-* Use colours with good contrast.
-* Keep point labels concise.
-* Preview your changes before saving.
-
-### Next Steps
-
-Now that Baxtersweb Maps has been configured, continue to the [**Examples**](examples.md) guide to explore practical ways to use the plugin.
+**Next:** [Examples](examples.md)
