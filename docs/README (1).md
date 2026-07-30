@@ -1,77 +1,71 @@
 # Getting Started
 
-Welcome to Baxtersweb Maps!
+Welcome to Baxtersweb Maps.
 
-This guide will walk you through the initial setup and help you display your first interactive map in just a few minutes.
+This guide will walk you through the essential steps to create and display your first interactive map.
 
-By the end of this guide, you'll have:
-
-* Installed the plugin
-* Created the required ACF fields
-* Added your first route
-* Displayed an interactive map on your website
+By the end of this guide, you'll have a working map with route points or points of interest displayed on your website.
 
 ### Before You Begin
 
-Before installing Baxtersweb Maps, make sure you have the following:
+Before continuing, make sure you have:
 
-* WordPress
-* ACF Pro
-* ACF OpenStreetMap Field
-* Baxtersweb Maps
+* WordPress installed.
+* ACF Pro installed and activated.
+* ACF OpenStreetMap Field installed and activated.
+* Baxtersweb Maps installed and activated.
 
-If you're missing any of these requirements, install them before continuing.
+If you haven't installed the plugin yet, follow the **Installation** guide first.
 
-### Step 1 — Install the Plugin
+### Step 1: Create the Map Fields
 
-Upload and activate the Baxtersweb Maps plugin through the WordPress Plugins screen.
+Go to **Maps → Setup**.
 
-Once activated, you'll find **Maps** in the WordPress admin menu.
+Choose one of the following options:
 
-Continue to the **Installation** guide if you need detailed installation instructions.
+* **Create New Field Group** to generate a dedicated Baxtersweb Maps Field Group.
+* **Use Existing Field Group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
 
-### Step 2 — Create the Required ACF Fields
+If you're creating a new Field Group, remember to configure the ACF **Location Rules** so the fields appear on the content you want to map.
 
-Baxtersweb Maps includes a setup tool that automatically creates the required ACF Field Group.
+### Step 2: Create Your Content
 
-Navigate to:
+Create or edit the post, page or custom post type where you want to display your map.
 
-**Maps → Setup**
-
-and click:
-
-**Create ACF Fields**
-
-The plugin will generate all required fields for storing route points and points of interest.
-
-### Step 3 — Create Your First Map
-
-Create or edit any post, page or custom post type.
-
-You'll now see the Baxtersweb Maps field group where you can begin adding:
+Complete the Baxtersweb Maps fields by adding:
 
 * Route points
 * Points of interest
-* Labels
-* Descriptions
-* Images
+* Any optional map settings
 
-Save or update your content once you've finished.
+Publish or update your content when you're finished.
 
-### Step 4 — Display Your Map
+### Step 3: Display the Map
 
-Add the map shortcode wherever you'd like the map to appear.
+Add the map shortcode where you'd like the map to appear.
 
-If you're displaying the map inside a loop, make sure the shortcode receives the current post ID.
+```
+[bxtr_map]
+```
 
-The **Usage** section contains complete shortcode examples for common scenarios.
+If you're displaying maps inside a loop or template, pass the appropriate post ID.
+
+### Step 4: Improve Your Map
+
+Once your first map is working, you can customise it by:
+
+* Changing colours and marker styles.
+* Choosing letters or numbers for route markers.
+* Enabling automatic road routing with a free routing API key.
+* Adjusting the map appearance to match your website.
+
+> **Note:** If you don't configure a routing API key, Baxtersweb Maps will still connect your route points using a dashed straight line.
 
 ### Next Steps
 
-Now that your first map is ready, continue with the following guides:
+Now that your first map is working, you can explore the rest of the documentation:
 
-* **Installation** — detailed installation instructions.
-* **Setup** — learn about every plugin setting.
-* **Usage** — display maps using shortcodes and templates.
-* **Examples** — explore real-world implementation ideas.
-* **Troubleshooting** — solve common problems quickly.
+* [**Usage**](usage.md) explains how to build maps effectively.
+* [**Setup**](setup.md) covers all available configuration options.
+* [**Examples**](examples.md) demonstrates common use cases.
+* [**Troubleshooting**](troubleshooting.md) helps resolve common issues.

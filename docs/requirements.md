@@ -8,49 +8,43 @@ description: >-
 
 ### WordPress
 
-Baxtersweb Maps requires WordPress 6.8 or later.
+Baxtersweb Maps requires WordPress version 6.5 or later.
 
-We recommend always using the latest stable version of WordPress to ensure the best compatibility, security and performance.
+For the best experience, always use the latest stable version.
 
 ### ACF Pro
 
 Baxtersweb Maps requires **Advanced Custom Fields Pro (ACF Pro)**.
 
-The plugin uses ACF Pro to store route points, points of interest and map settings within your content.
-
-> **Required**
+The plugin uses ACF Pro to create and manage map data, including route points, points of interest and map settings.
 
 ### ACF OpenStreetMap Field
 
 Baxtersweb Maps also requires the **ACF OpenStreetMap Field** plugin.
 
-This field type allows you to select locations directly from an interactive OpenStreetMap interface.
+This provides the map field used to select locations for routes and points of interest.
 
-> **Required**
+### PHP
 
-### PHP Version
+For the best performance and security, we recommend using a supported version of PHP.
 
-We recommend using PHP 8.1 or newer.
+### Routing API (Optional)
 
-Using a supported PHP version provides better performance, security and compatibility with the latest WordPress releases.
+A routing API key is only required if you want Baxtersweb Maps to automatically calculate road routes between route points.
 
-### JavaScript
-
-Baxtersweb Maps requires JavaScript to display interactive maps.
-
-Most modern browsers have JavaScript enabled by default.
+Without an API key, the plugin will still display your map and connect route points using a dashed straight line.
 
 ### Internet Connection
 
-Map tiles are loaded from OpenStreetMap providers, so visitors require an internet connection to view interactive maps.
+An internet connection is required to load map tiles and, if enabled, calculate routes using your chosen routing provider.
 
-### Before Installing
+### Before You Continue
 
-Before continuing, make sure:
+Before proceeding, make sure you have:
 
-* WordPress is installed and working correctly.
-* ACF Pro is installed and activated.
-* ACF OpenStreetMap Field is installed and activated.
-* Your website meets the recommended PHP version.
+* WordPress installed.
+* ACF Pro installed and activated.
+* ACF OpenStreetMap Field installed and activated.
+* Baxtersweb Maps installed and activated.
 
-Once these requirements have been met, continue to the [**Installation** guide](installation.md).
+**Next:** [Installation](installation.md)
