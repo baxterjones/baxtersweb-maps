@@ -2,6 +2,7 @@
 description: >-
   Discover some of the ways Baxtersweb Maps can be used to create engaging,
   interactive maps.
+icon: book-sparkles
 ---
 
 # Examples

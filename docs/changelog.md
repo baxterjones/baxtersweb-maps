@@ -1,3 +1,7 @@
+---
+icon: square-list
+---
+
 # Changelog
 
 \= 1.1.11 =

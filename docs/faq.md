@@ -1,5 +1,6 @@
 ---
 description: Here are answers to some of the most common questions about Baxtersweb Maps.
+icon: messages-question
 ---
 
 # FAQ

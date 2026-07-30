@@ -1,3 +1,7 @@
+---
+icon: stars
+---
+
 # Getting Started
 
 Welcome to Baxtersweb Maps.
@@ -15,16 +19,16 @@ Before continuing, make sure you have:
 * ACF OpenStreetMap Field installed and activated.
 * Baxtersweb Maps installed and activated.
 
-If you haven't installed the plugin yet, follow the **Installation** guide first.
+If you haven't installed the plugin yet, follow the [**Installation**](installation.md) guide first.
 
 ### Step 1: Create the Map Fields
 
-Go to **Maps → Setup**.
+Go to **Tools → Baxtersweb Maps → Overview**.
 
-Choose one of the following options:
+Choose one of the following options under Add map fields:
 
-* **Create New Field Group** to generate a dedicated Baxtersweb Maps Field Group.
-* **Use Existing Field Group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
+* **Create new field group** to generate a dedicated Baxtersweb Maps Field Group.
+* **Add fields to an existing group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
 
 If you're creating a new Field Group, remember to configure the ACF **Location Rules** so the fields appear on the content you want to map.
 
@@ -48,7 +52,7 @@ Add the map shortcode where you'd like the map to appear.
 [bxtr_map]
 ```
 
-If you're displaying maps inside a loop or template, pass the appropriate post ID.
+If you're displaying maps inside a loop or template, pass the appropriate post ID. See [**Usage**](usage.md#displaying-a-map).
 
 ### Step 4: Improve Your Map
 

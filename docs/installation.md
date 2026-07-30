@@ -1,5 +1,6 @@
 ---
 description: This guide explains how to install Baxtersweb Maps and prepare it for use.
+icon: desktop-arrow-down
 ---
 
 # Installation

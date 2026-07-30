@@ -2,6 +2,7 @@
 description: >-
   If you experience any issues while using Baxtersweb Maps, the following
   solutions may help.
+icon: lightbulb-exclamation-on
 ---
 
 # Troubleshooting

@@ -2,6 +2,7 @@
 description: >-
   Create beautiful, interactive maps with routes and points of interest directly
   from your WordPress content.
+icon: house-heart
 ---
 
 # Home

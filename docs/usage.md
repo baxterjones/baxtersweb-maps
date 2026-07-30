@@ -2,6 +2,7 @@
 description: >-
   Once Baxtersweb Maps is installed and configured, you can begin creating
   interactive maps for your website.
+icon: drum
 ---
 
 # Usage
@@ -30,13 +31,65 @@ POIs are ideal for highlighting attractions, accommodation, restaurants, landmar
 
 ### Displaying a Map
 
-Display a map anywhere on your website using the shortcode:
+Display the map for the current post, page or custom post type using:
 
 ```
 [bxtr_map]
 ```
 
-If you're displaying maps inside a loop or custom template, pass the appropriate post ID to display the correct map.
+The shortcode uses the map data saved to the current content item.
+
+#### Display a Specific Map
+
+Use the `id` attribute when you need to display map data from a specific post:
+
+```
+[bxtr_map id="123"]
+```
+
+Replace `123` with the post ID containing the map fields.
+
+#### Use the Shortcode in a PHP Template
+
+When displaying maps inside a WordPress loop or custom PHP template, pass the current post ID:
+
+```
+echo do_shortcode(    '[bxtr_map id="' . get_the_ID() . '"]');
+```
+
+#### Use the Shortcode with Advanced Views
+
+Inside an Advanced Views Layout, use the current object ID:
+
+```
+[bxtr_map id="{{ _layout.object_id }}"]
+```
+
+### Common Map Variations
+
+#### Display POIs Without a Route
+
+```
+[bxtr_map route="no" poi="yes"]
+```
+
+#### Display a Route Without POIs
+
+```
+[bxtr_map route="yes" poi="no"]
+```
+
+#### Display a Map from a Specific Post
+
+```
+[bxtr_map id="123"]
+```
+
+You can also combine attributes:
+
+```
+[bxtr_map id="123" route="yes" poi="no"]
+```
 
 ### Customising Maps
 

@@ -2,6 +2,7 @@
 description: >-
   Before installing Baxtersweb Maps, ensure your website meets the following
   requirements.
+icon: box-open-full
 ---
 
 # Requirements

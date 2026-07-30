@@ -2,6 +2,7 @@
 description: >-
   The Setup screen allows you to configure Baxtersweb Maps before creating your
   first map.
+icon: gear
 ---
 
 # Setup
