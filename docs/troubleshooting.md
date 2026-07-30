@@ -76,18 +76,20 @@ After changing plugin settings:
 * Clear any caching plugins.
 * Clear your browser cache if necessary.
 
-### I still need help
+### Still Need Help?
 
-If the problem persists:
+If the issue persists:
 
-* Review the documentation.
-* Visit the Baxtersweb Maps demo.
-* Contact Baxtersweb support.
+1. Check the documentation to see if your question has already been answered.
+2. Search the WordPress.org [support forum](https://wordpress.org/support/plugin/baxtersweb-maps/).
+3. Create a new support topic if you cannot find a solution.
 
-When requesting support, include:
+When requesting support, please include:
 
 * Your WordPress version.
-* Your PHP version.
-* Your Baxtersweb Maps version.
-* Any error messages.
-* The steps required to reproduce the issue.
+* Your Guide Dots version.
+* A description of the issue.
+* The steps required to reproduce it.
+* Screenshots, if applicable.
+
+Providing this information helps us resolve issues more quickly.
