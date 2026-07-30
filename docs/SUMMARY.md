@@ -1,4 +1,12 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [Home](README.md)
+* [Getting Started](<README (1).md>)
+* [Requirements](requirements.md)
 * [Installation](installation.md)
+* [Usage](usage.md)
+* [Setup](setup.md)
+* [Examples](examples.md)
+* [FAQ](faq.md)
+* [Troubleshooting](troubleshooting.md)
+* [Changelog](changelog.md)
