@@ -22,16 +22,14 @@ Install and activate both plugins before continuing.
 
 ### Step 3: Create the Map Fields
 
-Go to **Maps → Setup**.
+Go to **Tools → Baxtersweb Maps**.
 
 You can either:
 
 * **Create New Field Group** to generate a dedicated Baxtersweb Maps Field Group.
-* **Use Existing Field Group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
+* **Add Fields to an Existing Field Group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
 
 ### Step 4: Configure ACF Location Rules
-
-If you created a new Field Group, open it in **Custom Fields → Field Groups** and configure the **Location Rules**.
 
 Choose where the fields should appear, such as:
 
@@ -39,9 +37,9 @@ Choose where the fields should appear, such as:
 * Pages
 * A custom post type
 
-Save the Field Group once you're finished.
+Decide if you need Points of interest fields, uncheck if you don't need it.
 
-> **Note:** If you added the fields to an existing Field Group, no additional location configuration is required.
+Click Add or update missing fields button once you're finished.
 
 ### Step 5: Verify the Installation
 

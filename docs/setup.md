@@ -11,7 +11,7 @@ Here you can create the required ACF fields, choose where those fields should be
 
 Navigate to:
 
-**Maps → Setup**
+**Tools → Baxtersweb Maps**
 
 ### Creating the ACF Fields
 
@@ -26,7 +26,7 @@ The plugin gives you two options:
 
 If you're setting up Baxtersweb Maps for the first time, creating a dedicated field group is the recommended option.
 
-Enter a name for your new field group, then click **Create ACF Fields**.
+Enter a name for your new field group, then click **Add or update missing fields**.
 
 The plugin will automatically generate all required fields.
 
@@ -34,7 +34,7 @@ The plugin will automatically generate all required fields.
 
 If your content already uses ACF, you can add the Baxtersweb Maps fields to one of your existing field groups.
 
-Simply select the field group from the list and click **Create ACF Fields**.
+Simply select the option for **Add fields to an existing group** then choose the existing field group from the list and click **Add or update missing fields**.
 
 This allows all of your custom fields to remain together within a single editing screen.
 

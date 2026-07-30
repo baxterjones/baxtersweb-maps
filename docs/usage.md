@@ -11,21 +11,21 @@ icon: drum
 
 Create or edit the post, page or custom post type where you want your map to appear.
 
-Using the Baxtersweb Maps fields, add your route points and points of interest. As you save your content, the map data is stored alongside your post, making it easy to update whenever required.
+Using the Baxtersweb Maps fields, add your Map markers and Points of interest. As you save your content, the map data is stored alongside your post, making it easy to update whenever required.
 
-### Route Points
+### Map Markers
 
-Route points define the path of your journey.
+Map Markers define the path of your journey.
 
-Add each point in the order it should appear on the map.
+Add each marker in the order it should appear on the map.
 
-If a routing API key is configured, Baxtersweb Maps will calculate the road route between each point. Otherwise, route points are connected using a dashed straight line.
+If a routing API key is configured, Baxtersweb Maps will calculate the road route between each marker. Otherwise, map markers are connected using a dashed straight line.
 
 ### Points of Interest
 
 Points of interest (POIs) highlight important locations along your route.
 
-Unlike route points, POIs are displayed independently and are not used when calculating the route.
+Unlike map markers, POIs are displayed independently and are not used when calculating the route.
 
 POIs are ideal for highlighting attractions, accommodation, restaurants, landmarks and other useful locations.
 
@@ -105,13 +105,13 @@ Available options include:
 * Route numbering
 * Nearby POI grouping
 
-See the **Setup** guide for a complete explanation of each option.
+See the [**Setup**](setup.md) guide for a complete explanation of each option.
 
 ### Best Practices
 
 For the best results:
 
-* Add route points in travel order.
+* Add map markers in travel order.
 * Use clear, descriptive labels for points of interest.
 * Only include locations that add value to the visitor.
 * Keep maps focused on a single journey or area.

@@ -13,9 +13,9 @@ By the end of this guide, you'll have a working map with route points or points 
 Before continuing, make sure you have:
 
 * WordPress installed.
-* ACF Pro installed and activated.
-* ACF OpenStreetMap Field installed and activated.
-* Baxtersweb Maps installed and activated.
+* [ACF Pro](https://www.advancedcustomfields.com/pro/) installed and activated.
+* [ACF OpenStreetMap Field](https://wordpress.org/plugins/acf-openstreetmap-field/) installed and activated.
+* [Baxtersweb Maps](https://wordpress.org/plugins/baxtersweb-maps/) installed and activated.
 
 If you haven't installed the plugin yet, follow the [**Installation**](installation.md) guide first.
 
