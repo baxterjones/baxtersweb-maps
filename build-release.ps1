@@ -18,6 +18,7 @@ $ExcludeDirs = @(
     "codex-plugin",
     "dist",
     "build"
+    "docs"
 )
 
 $ExcludeFiles = @(
