@@ -1,55 +1,29 @@
 ---
-description: This guide explains how to install Baxtersweb Maps and prepare it for use.
+description: Install Baxtersweb Maps and prepare its required plugins.
 icon: desktop-arrow-down
 ---
 
 # Installation
 
-### Step 1: Install Baxtersweb Maps
+## Install the required plugins
 
-Install and activate Baxtersweb Maps from the WordPress Plugins screen.
+Before setting up maps, install and activate:
 
-Once activated, a new **Baxtersweb Maps** in the **Tools** menu will appear in the WordPress admin area.
+1. **Advanced Custom Fields Pro**.
+2. **ACF OpenStreetMap Field**.
 
-### Step 2: Install the Required Plugins
+## Install Baxtersweb Maps
 
-Baxtersweb Maps requires the following plugins:
+From the WordPress admin:
 
-* Advanced Custom Fields Pro (ACF Pro)
-* ACF OpenStreetMap Field
+1. Go to **Plugins → Add New Plugin**.
+2. Search for **Baxtersweb Maps**, or upload the plugin ZIP.
+3. Install and activate it.
 
-Install and activate both plugins before continuing.
+The settings screen is added at **Tools → Baxtersweb Maps**. A **Settings** link is also available on the Plugins screen.
 
-### Step 3: Create the Map Fields
+## Confirm the installation
 
-Go to **Tools → Baxtersweb Maps**.
+Open **Tools → Baxtersweb Maps → Overview**. The setup status should show ACF Pro and ACF OpenStreetMap Field as active.
 
-You can either:
-
-* **Create New Field Group** to generate a dedicated Baxtersweb Maps Field Group.
-* **Add Fields to an Existing Field Group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
-
-### Step 4: Configure ACF Location Rules
-
-Choose where the fields should appear, such as:
-
-* Posts
-* Pages
-* A custom post type
-
-Decide if you need Points of interest fields, uncheck if you don't need it.
-
-Click Add or update missing fields button once you're finished.
-
-### Step 5: Verify the Installation
-
-Create or edit a post, page or custom post type that matches your Location Rules.
-
-If the Baxtersweb Maps fields are visible, your installation is complete and you're ready to start building maps.
-
-### Next Steps
-
-Now that Baxtersweb Maps is installed:
-
-* Learn how to create and display maps in [**Usage**](usage.md).
-* Configure routing and styling options in [**Setup**](setup.md).
+Next, follow [Getting Started](README%20%281%29.md) to add the map fields and create your first map.

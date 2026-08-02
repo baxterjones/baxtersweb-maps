@@ -4,70 +4,61 @@ icon: stars
 
 # Getting Started
 
-This guide will walk you through the essential steps to create and display your first interactive map.
+This guide takes you from activation to a working map.
 
-By the end of this guide, you'll have a working map with route points or points of interest displayed on your website.
-
-### Before You Begin
-
-Before continuing, make sure you have:
-
-* WordPress installed.
-* [ACF Pro](https://www.advancedcustomfields.com/pro/) installed and activated.
-* [ACF OpenStreetMap Field](https://wordpress.org/plugins/acf-openstreetmap-field/) installed and activated.
-* [Baxtersweb Maps](https://wordpress.org/plugins/baxtersweb-maps/) installed and activated.
-
-If you haven't installed the plugin yet, follow the [**Installation**](installation.md) guide first.
-
-### Step 1: Create the Map Fields
+## 1. Add the map fields
 
 Go to **Tools → Baxtersweb Maps → Overview**.
 
-Choose one of the following options under Add map fields:
+Choose where the plugin should add its fields:
 
-* **Create new field group** to generate a dedicated Baxtersweb Maps Field Group.
-* **Add fields to an existing group** to add the Baxtersweb Maps fields to one of your existing ACF Field Groups.
+* **Create a new field group** creates a dedicated **Baxtersweb Maps Fields** group. Select the posts, pages or public custom post types where it should appear.
+* **Add fields to an existing group** adds the maintained Baxtersweb Maps fields to a group you already use. The plugin leaves your other fields unchanged.
 
-If you're creating a new Field Group, remember to configure the ACF **Location Rules** so the fields appear on the content you want to map.
+Route marker fields are always included. Enable **Points of interest** if the map also needs independent locations such as hotels, attractions or facilities.
 
-### Step 2: Create Your Content
+Click **Add map fields**. You can use the same button later to add or update missing Baxtersweb Maps fields.
 
-Create or edit the post, page or custom post type where you want to display your map.
+## 2. Add map content
 
-Complete the Baxtersweb Maps fields by adding:
+Create or edit content where the selected ACF field group appears.
 
-* Route points
-* Points of interest
-* Any optional map settings
+Under **Map Markers**, add one row for each route stop. Set the rows in travel order because the plugin uses that order for the marker sequence and route line.
 
-Publish or update your content when you're finished.
+Each marker can contain:
 
-### Step 3: Display the Map
+* A title.
+* A description for the popup.
+* One location selected in the OpenStreetMap field.
 
-Add the map shortcode where you'd like the map to appear.
+If POI fields were included, add independent locations under **Points of Interest**. POIs do not change the route.
 
-```
+Publish or update the content.
+
+## 3. Display the map
+
+Add the shortcode to the same post or page:
+
+```text
 [bxtr_map]
 ```
 
-If you're displaying maps inside a loop or template, pass the appropriate post ID. See [**Usage**](usage.md#displaying-a-map).
+To display map data stored on another post, pass its ID:
 
-### Step 4: Improve Your Map
+```text
+[bxtr_map id="123"]
+```
 
-Once your first map is working, you can customise it by:
+The map automatically fits the available markers and POIs.
 
-* Changing colours and marker styles.
-* Choosing letters or numbers for route markers.
-* Enabling automatic road routing with a free routing API key.
-* Adjusting the map appearance to match your website.
+## 4. Optional: enable road routing
 
-> **Note:** If you don't configure a routing API key, Baxtersweb Maps will still connect your route points using a dashed straight line.
+Without an API key, two or more route markers are connected by a dashed straight line.
 
-### Next Steps
+To follow mapped roads instead, go to **Tools → Baxtersweb Maps → Routing**, add an openrouteservice API key, and click **Save & Test API**. Existing maps without saved road geometry are then refreshed automatically.
 
-Now that your first map is working, you can explore the rest of the documentation:
+## 5. Adjust the defaults
 
-* [**Usage**](usage.md) explains how to build maps effectively.
-* [**Setup**](setup.md) covers all available configuration options.
-* [**Examples**](examples.md) demonstrates common use cases.
-* [**Troubleshooting**](troubleshooting.md) helps resolve common issues.
+Use **Tools → Baxtersweb Maps → Styles** to change colours, height, border radius, marker sequence, route visibility, POI visibility, icons and POI grouping.
+
+See [Usage](usage.md) for shortcode options and [Setup](setup.md) for every admin setting.

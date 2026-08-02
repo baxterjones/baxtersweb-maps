@@ -1,51 +1,40 @@
 ---
-description: >-
-  Before installing Baxtersweb Maps, ensure your website meets the following
-  requirements.
+description: Review the required and optional components before installing Baxtersweb Maps.
 icon: box-open-full
 ---
 
 # Requirements
 
+## Required
+
 ### WordPress
 
-Baxtersweb Maps requires WordPress version 6.5 or later.
-
-For the best experience, always use the latest stable version.
+The plugin readme declares WordPress **6.5 or later**.
 
 ### ACF Pro
 
-Baxtersweb Maps requires **Advanced Custom Fields Pro (ACF Pro)**.
-
-The plugin uses ACF Pro to create and manage map data, including route points, points of interest and map settings.
+Baxtersweb Maps requires **Advanced Custom Fields Pro** because route markers and points of interest are stored in repeater fields.
 
 ### ACF OpenStreetMap Field
 
-Baxtersweb Maps also requires the **ACF OpenStreetMap Field** plugin.
+The free **ACF OpenStreetMap Field** plugin provides the location picker used inside each repeater row.
 
-This provides the map field used to select locations for routes and points of interest.
+Locations must return **Raw data** and each row should contain one selected marker. Fields created by Baxtersweb Maps use this configuration automatically.
 
-### PHP
+## Optional
 
-For the best performance and security, we recommend using a supported version of PHP.
+### openrouteservice API key
 
-### Routing API (Optional)
+An API key is only needed for road-following routes. Without one, the map still works and uses a dashed straight line between ordered route markers.
 
-A routing API key is only required if you want Baxtersweb Maps to automatically calculate road routes between route points.
+### Advanced Views
 
-Without an API key, the plugin will still display your map and connect route points using a dashed straight line.
+Advanced Views is not required. The Baxtersweb Maps admin includes an optional integration reference for users who display maps in Advanced Views layouts.
 
-### Internet Connection
+## External connections
 
-An internet connection is required to load map tiles and, if enabled, calculate routes using your chosen routing provider.
+When a map is viewed, map tiles are requested from the OpenStreetMap tile service in the visitor's browser. Standard request information, including the visitor's IP address and requested tile coordinates, may be sent to that service.
 
-### Before You Continue
+When road routing is enabled, route coordinates are sent from the WordPress server to openrouteservice when geometry needs to be calculated. The returned route is saved in WordPress and reused on normal page views.
 
-Before proceeding, make sure you have:
-
-* WordPress installed.
-* ACF Pro installed and activated.
-* ACF OpenStreetMap Field installed and activated.
-* Baxtersweb Maps installed and activated.
-
-**Next:** [Installation](installation.md)
+Leaflet, Dashicons and the plugin's own files are loaded locally.

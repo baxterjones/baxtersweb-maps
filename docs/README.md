@@ -1,45 +1,40 @@
 ---
 description: >-
-  Create beautiful, interactive maps with routes and points of interest directly
-  from your WordPress content.
+  Create interactive route maps and points of interest from WordPress content
+  using ACF Pro and OpenStreetMap.
 icon: house-heart
 ---
 
-# Home
+# Baxtersweb Maps
 
-[Baxtersweb Maps](https://wordpress.org/plugins/baxtersweb-maps/) makes it easy to create interactive maps with routes and points of interest using familiar WordPress tools.
+Baxtersweb Maps creates interactive maps from locations stored in your WordPress content. Use ordered map markers for a journey, add independent points of interest, and display the finished map with a shortcode.
 
-Whether you're building a travel itinerary, hiking trail, delivery route, tourism guide or event map, the plugin integrates with ACF Pro to let you manage map content directly from the WordPress editor.
+The plugin works with posts, pages and public custom post types. It uses ACF Pro repeaters for map content, the ACF OpenStreetMap Field for location selection, Leaflet for map display, and optional openrouteservice routing when you want the route to follow roads.
 
-Maps can be displayed anywhere on your website using a simple shortcode, while built-in styling options allow you to match your site's design without writing custom code.
+## What you can create
 
-### Features
+* Travel itineraries and road trips.
+* Walking, hiking and cycling routes.
+* Tourism and destination guides.
+* Event, campus and resort maps.
+* Delivery routes and service areas.
+* Maps containing only points of interest.
 
-* Create interactive maps using ACF Pro.
-* Display routes and points of interest on a single map.
-* Automatically calculate road routes using a supported routing provider.
-* Connect route points with a dashed straight line when no routing API key is configured.
-* Choose between letters or numbers for route markers.
-* Customise route colours, markers and labels.
-* Group nearby points of interest to reduce map clutter.
-* Create a new Baxtersweb Maps Field Group or add the fields to an existing ACF Field Group.
-* Works with posts, pages and custom post types.
-* Compatible with most WordPress themes.
+## Core features
 
-### Requirements
+* Ordered alphabetical or numbered route markers.
+* Optional road-following routes.
+* Dashed straight-line fallback routes without an API key.
+* Independent points of interest with icons, colours and popups.
+* Grouping for nearby points of interest.
+* Global map styling with a live preview.
+* Automatic ACF field creation in a new or existing field group.
+* Shortcode support for editors, templates, loops and page builders.
 
-Before you begin, make sure you have:
+## Start here
 
-* WordPress
-* ACF Pro
-* ACF OpenStreetMap Field
+1. Check the [requirements](requirements.md).
+2. [Install the plugin](installation.md) and its dependencies.
+3. Follow [Getting Started](README%20%281%29.md) to create your first map.
 
-See the [**Requirements**](requirements.md) page for full details.
-
-### Documentation
-
-This documentation will guide you through installing, configuring and using Baxtersweb Maps, from creating your first map to customising its appearance and troubleshooting common issues.
-
-If you're new to the plugin, start with **Getting Started**.
-
-**Next:** [Getting Started](<README (1).md>)
+For a complete reference, see [Setup](setup.md), [Usage](usage.md), and [Troubleshooting](troubleshooting.md).

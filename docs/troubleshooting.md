@@ -1,93 +1,92 @@
 ---
-description: >-
-  If you experience any issues while using Baxtersweb Maps, the following
-  solutions may help.
+description: Diagnose missing fields, empty maps, routing failures and display problems.
 icon: lightbulb-exclamation-on
 ---
 
 # Troubleshooting
 
-### The map doesn't appear
+## The Baxtersweb Maps fields do not appear
 
-Check the following:
+1. Confirm ACF Pro and ACF OpenStreetMap Field are active.
+2. Open **Tools → Baxtersweb Maps → Overview** and check the map field status.
+3. If using the generated group, confirm the required post type was selected during setup.
+4. If using an existing group, review that group's ACF location rules.
+5. Click **Add or update missing fields** if the setup is incomplete.
 
-* Baxtersweb Maps is activated.
-* ACF Pro is installed and activated.
-* ACF OpenStreetMap Field is installed and activated.
-* The required ACF fields have been created.
-* Your content contains valid route points or points of interest.
+## The map does not appear
 
-If you're using the shortcode inside a loop, make sure the correct post ID is being passed.
+A map needs at least one valid route marker or POI after visibility settings are applied.
 
-### The map fields don't appear when editing content
+Check that:
 
-Check that your ACF Field Group is assigned to the correct content type.
+* The shortcode is on a page where the intended post can be detected, or includes the correct `id`.
+* At least one location field contains valid raw coordinate data.
+* POIs have not been disabled when the map contains only POIs.
+* The route has not been disabled when the map contains only route markers.
 
-In ACF, review the **Location Rules** and ensure they include the post type you're editing.
+## The wrong map appears in a loop
 
-### My route isn't displayed
+Pass the current item's ID explicitly:
 
-Verify that:
+```php
+echo do_shortcode('[bxtr_map id="' . get_the_ID() . '"]');
+```
 
-* At least two valid route points have been added.
-* Each route point has a valid map location.
-* A routing API key has been entered if automatic route calculation is enabled.
+For Advanced Views:
 
-### Points of interest aren't visible
+```text
+[bxtr_map id="{{ _layout.object_id }}"]
+```
 
-Confirm that:
+## A route line does not appear
 
-* Points of interest have been added.
-* Each point includes a valid location.
-* The map is zoomed appropriately to include all locations.
+A route requires at least two unique, valid route marker locations and route visibility must be enabled.
 
-### Route calculation isn't working
+With no API key, the expected result is a dashed straight line. With a connected key, the plugin uses saved road geometry when available.
 
-If automatic route calculation fails:
+## Road routing fails
 
-* Confirm that your routing API key has been entered correctly.
-* Verify that the API key is still active.
-* Check that your routing provider has not exceeded its usage limits.
-* Ensure your web server can make outgoing HTTPS requests.
+Open **Tools → Baxtersweb Maps → Routing** and review the saved connection status.
 
-### The map looks incorrect
+Common causes include:
 
-If markers or routes don't appear as expected:
+* An invalid or inactive openrouteservice API key.
+* API usage limits.
+* The server blocking outgoing HTTPS requests.
+* A marker too far from a mapped drivable road.
+* A route that the service cannot calculate.
 
-* Clear your website cache.
-* Clear any browser cache.
-* Refresh the page.
-* Save the plugin settings again.
+The plugin retries the specific road-snapping failure with a 2 km limit and can split longer multi-stop requests into legs, but some coordinates still cannot produce a road route.
 
-### JavaScript errors
+Editors who can edit the affected post may see the saved routing error above the map. Visitors receive the normal fallback behaviour rather than that diagnostic.
 
-If the browser console reports JavaScript errors:
+## A changed route still shows old geometry
 
-* Temporarily disable other plugins to identify conflicts.
-* Switch to a default WordPress theme for testing.
-* Check whether another plugin is loading incompatible JavaScript.
+Save or update the post after changing marker coordinates. The plugin compares a coordinate hash and requests new geometry when the ordered unique coordinates change.
 
-### I changed the settings but nothing happened
+If necessary, reconnect a valid API key to refresh maps that have no saved geometry.
 
-After changing plugin settings:
+## POIs are missing
 
-* Click **Save Changes**.
-* Refresh the page.
-* Clear any caching plugins.
-* Clear your browser cache if necessary.
+Check that:
 
-### I still need help
+* POI fields were included during field setup.
+* POI visibility is enabled globally or with `poi="yes"`.
+* Each POI contains one valid location.
+* The shortcode has not set `poi="no"`.
 
-If the problem persists:
+## Nearby POIs appear as one marker
 
-* Review the documentation.
-* Visit the Baxtersweb Maps demo.
-* Contact Baxtersweb support.
+This is POI grouping. Click the grouped marker to spread the locations, or disable **Group nearby POIs** under **Styles**.
 
-When requesting support, include:
+## Colours or dimensions revert to defaults
 
-* Your WordPress version.
-* Your PHP version.
-* Your Baxtersweb Maps version.
-* Any error messages.
-* The steps required to reproduce the issue.
+Colour values must be valid hex colours. Map height accepts `px`, `vh`, `vw`, `rem` or `em`; border radius also accepts `%`. Invalid values are replaced with plugin defaults when saved.
+
+Clear page and browser caches after saving style changes.
+
+## JavaScript or layout conflicts
+
+Test with caching and optimisation disabled, then check the browser console. If the issue remains, temporarily test with a default theme and only the required plugins active.
+
+When requesting support, provide the page URL, plugin version, WordPress and PHP versions, browser console errors, and exact reproduction steps.

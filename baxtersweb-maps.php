@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('BXTR_MAPS_VERSION', '1.1.10');
+define('BXTR_MAPS_VERSION', '1.1.11');
 define('BXTR_MAPS_PLUGIN_FILE', __FILE__);
 define('BXTR_MAPS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('BXTR_MAPS_PLUGIN_URL', plugin_dir_url(__FILE__));

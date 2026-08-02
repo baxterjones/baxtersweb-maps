@@ -1,125 +1,102 @@
 ---
-description: >-
-  Once Baxtersweb Maps is installed and configured, you can begin creating
-  interactive maps for your website.
+description: Add map content and display it with the Baxtersweb Maps shortcode.
 icon: drum
 ---
 
 # Usage
 
-### Creating a Map
+## Add route markers
 
-Create or edit the post, page or custom post type where you want your map to appear.
+Edit a post, page or custom post type containing the Baxtersweb Maps fields.
 
-Using the Baxtersweb Maps fields, add your Map markers and Points of interest. As you save your content, the map data is stored alongside your post, making it easy to update whenever required.
+Under **Map Markers**, add one row per stop. Drag rows into the required route order.
 
-### Map Markers
+Each row includes:
 
-Map Markers define the path of your journey.
+* **Marker Title** — optional popup heading.
+* **Marker Description** — optional popup content.
+* **Marker Coordinates** — one location selected in the OpenStreetMap field.
 
-Add each marker in the order it should appear on the map.
+One valid marker displays without a route line. Two or more unique markers can be connected by a saved road route or the dashed straight-line fallback.
 
-If a routing API key is configured, Baxtersweb Maps will calculate the road route between each marker. Otherwise, map markers are connected using a dashed straight line.
+Markers at identical coordinates are offset slightly so they remain selectable. Repeated coordinates are ignored when road geometry is requested.
 
-### Points of Interest
+## Add points of interest
 
-Points of interest (POIs) highlight important locations along your route.
+POIs are optional and independent from the ordered route. Use them for accommodation, attractions, facilities, landmarks or other supporting places.
 
-Unlike map markers, POIs are displayed independently and are not used when calculating the route.
+Depending on the POI icon mode selected when the fields were generated, a row can include:
 
-POIs are ideal for highlighting attractions, accommodation, restaurants, landmarks and other useful locations.
+* Title and type.
+* Description.
+* Built-in icon or theme icon override.
+* Background colour override.
+* One location.
 
-### Displaying a Map
+Nearby POIs can be grouped automatically. Clicking a group spreads its markers around the shared area.
 
-Display the map for the current post, page or custom post type using:
+## Display the current map
 
-```
+```text
 [bxtr_map]
 ```
 
-The shortcode uses the map data saved to the current content item.
+The shortcode detects the current post ID.
 
-#### Display a Specific Map
+## Display map data from another post
 
-Use the `id` attribute when you need to display map data from a specific post:
-
-```
+```text
 [bxtr_map id="123"]
 ```
 
-Replace `123` with the post ID containing the map fields.
+Use an explicit ID inside loops, reusable templates or anywhere the current content item may be ambiguous.
 
-#### Use the Shortcode in a PHP Template
+## Shortcode attributes
 
-When displaying maps inside a WordPress loop or custom PHP template, pass the current post ID:
+| Attribute | Values | Purpose |
+| --- | --- | --- |
+| `id` | Post ID | Loads map data from a specific post. |
+| `route` | `yes` or `no` | Overrides the global route visibility for this map. |
+| `poi` | `yes` or `no` | Overrides the global POI visibility for this map. |
+| `template` | A sanitised key | Selects a named developer configuration provided through the `bxtr_template_config` filter. |
 
-```
-echo do_shortcode(    '[bxtr_map id="' . get_the_ID() . '"]');
-```
+Examples:
 
-#### Use the Shortcode with Advanced Views
-
-Inside an Advanced Views Layout, use the current object ID:
-
-```
-[bxtr_map id="{{ _layout.object_id }}"]
-```
-
-### Common Map Variations
-
-#### Display POIs Without a Route
-
-```
+```text
 [bxtr_map route="no" poi="yes"]
 ```
 
-#### Display a Route Without POIs
-
-```
-[bxtr_map route="yes" poi="no"]
-```
-
-#### Display a Map from a Specific Post
-
-```
-[bxtr_map id="123"]
-```
-
-You can also combine attributes:
-
-```
+```text
 [bxtr_map id="123" route="yes" poi="no"]
 ```
 
-### Customising Maps
+## PHP template
 
-The appearance of your maps can be customised from **Maps → Setup**.
+```php
+echo do_shortcode('[bxtr_map id="' . get_the_ID() . '"]');
+```
 
-Available options include:
+## Advanced Views layout
 
-* Route colours
-* Marker colours
-* Marker labels
-* POI marker styles
-* Border radius
-* Route numbering
-* Nearby POI grouping
+```text
+[bxtr_map id="{{ _layout.object_id }}"]
+```
 
-See the [**Setup**](setup.md) guide for a complete explanation of each option.
+## Page builders
 
-### Best Practices
+Place the shortcode in a Shortcode, Text or equivalent element. Use an explicit `id` when the builder is rendering another post inside a loop or listing.
 
-For the best results:
+## Developer template configurations
 
-* Add map markers in travel order.
-* Use clear, descriptive labels for points of interest.
-* Only include locations that add value to the visitor.
-* Keep maps focused on a single journey or area.
+The `template` attribute does not load a separate PHP template file. It passes a named key to the `bxtr_template_config` filter, which developers can use to modify the final map configuration.
 
-### Next Steps
+```php
+add_filter('bxtr_template_config', function ($config, $template) {
+    if ('compact' === $template) {
+        $config['map_height'] = '360px';
+        $config['border_radius'] = '0px';
+    }
 
-Now that you know how to create maps, you can:
-
-* Configure routing and styling options in [**Setup**](setup.md).
-* Explore practical examples in [**Examples**](examples.md).
-* Visit [**FAQ**](faq.md) and [**Troubleshooting**](troubleshooting.md) if you need additional help.
+    return $config;
+}, 10, 2);
+```

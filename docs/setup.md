@@ -1,101 +1,91 @@
 ---
-description: >-
-  Baxtersweb Maps is managed from Tools → Baxtersweb Maps in the WordPress
-  admin. The plugin includes four tabs that guide you through configuring your
-  maps, routing and display settings.
+description: Configure fields, routing, map styles and uninstall behaviour.
 icon: gear
 ---
 
 # Setup
 
-### Overview
+Baxtersweb Maps is managed from **Tools → Baxtersweb Maps**. Its four tabs separate field setup, routing, appearance and data preferences.
 
-The **Overview** tab helps you prepare your website for creating maps.
+## Overview
 
-From here you can:
+### Setup status
 
-* Check that **ACF Pro** is installed and active.
-* Check that **ACF OpenStreetMap Field** is installed and active.
-* Select or create the ACF field group used for your maps.
-* Create the required map fields automatically.
-* View the current setup status.
+The status table checks:
 
-Once your field group has been prepared, you can begin adding maps to your content.
+* ACF Pro.
+* ACF OpenStreetMap Field.
+* Whether the Baxtersweb Maps route fields exist.
+* Whether optional road routing is connected.
 
-### Routing
+### Add map fields
 
-The **Routing** tab controls how routes are generated.
+Choose one field group mode:
 
-By default, Baxtersweb Maps connects markers using straight lines.
+**Create a new field group**
 
-If you want roads to be followed automatically, you can connect an OpenRouteService API key.
+The plugin creates or updates **Baxtersweb Maps Fields** and assigns it to the selected public post types. Posts and pages are selected by default when available.
 
-From this page you can:
+**Add fields to an existing group**
 
-* Add or update your API key.
-* Test the connection.
-* Refresh existing saved routes.
-* View the current routing status.
+Choose an existing ACF field group. The plugin adds or updates only its own stable fields and does not rename, map or remove your other fields.
 
-Road-following routing is optional. Without an API key, maps continue to work using straight-line routes.
+Route marker fields are always created. POI fields are optional. Re-running the setup updates missing Baxtersweb Maps fields rather than duplicating them.
 
-### Styles
+### Display reference
 
-The **Styles** tab controls the default appearance of your maps.
+The Overview tab also shows the standard shortcode and examples for specific content IDs, PHP templates and Advanced Views.
 
-Available options include:
+## Routing
 
-* Route colour.
-* Route marker colour.
-* Route marker text colour.
-* Point of Interest marker colour.
-* Default Point of Interest icon.
-* Map height.
-* Border radius.
-* Marker sequence.
-* Route visibility.
-* Point of Interest visibility.
-* Point of Interest clustering.
+Baxtersweb Maps uses **openrouteservice** for optional road-following geometry.
 
-These defaults are applied to every map unless overridden by shortcode options.
+1. Create an openrouteservice API key.
+2. Paste it into the Routing tab.
+3. Click **Save & Test API**.
 
-### Help & Data
+When the key is verified, the plugin attempts to calculate routes for existing maps that do not yet have saved road geometry. New or changed routes are calculated when their content is saved.
 
-The **Help & Data** tab provides additional resources and maintenance options.
+Calculated geometry is stored in post meta and reused. Removing the API key keeps existing saved road routes, but new or changed routes use the straight-line fallback until another valid key is connected.
 
-Here you can:
+For rural markers that cannot be matched within the service's normal range, the plugin retries with a bounded 2 km road-snapping radius. Longer multi-stop routes may be requested one leg at a time and merged.
 
-* View links to the documentation.
-* Open the live demo.
-* Review the required data structure.
-* Configure uninstall behaviour.
+## Styles
 
-This tab is also useful when setting up the plugin on a new website or preparing it for handover.
+Styles are global defaults for all maps.
 
-### Creating the Map Fields
+### Route and map
 
-Before creating your first map, you'll need to create the required ACF fields.
+* **Show route line** — enable or disable the line between route markers.
+* **Route colour** — colour of the road route or fallback line.
+* **Route marker colour** — marker background.
+* **Route marker text colour** — letter or number colour.
+* **Marker sequence** — alphabetical or numeric.
+* **Map height** — accepts `px`, `vh`, `vw`, `rem` or `em`, for example `500px` or `70vh`.
+* **Border radius** — accepts the same units plus `%`.
 
-From the **Overview** tab:
+### Points of interest
 
-1. Select an existing ACF Field Group, or create a new one.
-2. Click **Create ACF Fields**.
-3. The required Route and Point of Interest fields will be added automatically.
+* **Show points of interest** — global POI visibility.
+* **POI marker colour** — default background colour.
+* **POI icon mode** — built-in Dashicon, theme icon class or plain marker.
+* **Default icon** — used when built-in icons are selected.
+* **Theme icon class** — default CSS class when theme icons are selected.
+* **Group nearby POIs** — combines close locations and spreads them when clicked.
 
-You can add these fields to existing content types or use them in a dedicated field group.
+Individual POI rows can override the global icon or background colour when the corresponding generated fields are present.
 
-### Recommended Workflow
+The live preview reflects the saved style settings.
 
-For the best experience:
+## Help & Data
 
-1. Install the required plugins.
-2. Open **Tools → Baxtersweb Maps**.
-3. Create the required ACF fields.
-4. Configure your preferred map styles.
-5. (Optional) Connect OpenRouteService for road-following routes.
-6. Add map data to your content.
-7. Display the map using the provided shortcode.
+This tab contains documentation and demo links, the field-name reference, shortcode examples and the uninstall preference.
 
-Following this workflow ensures your maps are ready to use with minimal configuration.
+### Data on uninstall
 
-**Next:** [Examples](examples.md)
+Choose whether deleting the plugin should:
+
+* Keep plugin settings and generated fields; or
+* Remove plugin settings and the dedicated generated **Baxtersweb Maps Fields** group.
+
+Fields added to another ACF field group are not removed with that group. Existing post content is not described as being deleted by this setting.

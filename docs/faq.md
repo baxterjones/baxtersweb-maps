@@ -1,133 +1,98 @@
 ---
-description: Here are answers to some of the most common questions about Baxtersweb Maps.
+description: Answers to common questions about Baxtersweb Maps.
 icon: messages-question
 ---
 
 # FAQ
 
-If you can't find the answer you're looking for, visit the [support forum](https://wordpress.org/support/plugin/baxtersweb-maps/).
-
 <details>
-
 <summary>Does Baxtersweb Maps require ACF Pro?</summary>
 
-Yes.
-
-Baxtersweb Maps requires **Advanced Custom Fields Pro (ACF Pro)** to store route points, points of interest and other map data.
-
+Yes. The plugin uses ACF Pro repeater fields for route markers and optional points of interest.
 </details>
 
 <details>
+<summary>Is ACF OpenStreetMap Field required?</summary>
 
-<summary>Does the plugin require the ACF OpenStreetMap Field plugin?</summary>
-
-Yes.
-
-Baxtersweb Maps uses the **ACF OpenStreetMap Field** plugin to allow locations to be selected directly from an interactive map.
-
+Yes. It provides the location picker used in each map row.
 </details>
 
 <details>
+<summary>Do I need a Google Maps API key?</summary>
 
-<summary>Can I use the plugin with any WordPress theme?</summary>
-
-Yes.
-
-Baxtersweb Maps is designed to work with any well-coded WordPress theme.
-
+No. Maps use OpenStreetMap tiles and Leaflet.
 </details>
 
 <details>
+<summary>Do I need a routing API key?</summary>
 
-<summary>Can I use Baxtersweb Maps with custom post types?</summary>
-
-Yes.
-
-The plugin works with posts, pages and custom post types.
-
-Simply assign the ACF Field Group to the content types where you want to create maps.
-
+Not for normal maps. Without a key, route markers are joined by a dashed straight line. A valid openrouteservice key is only needed for road-following geometry.
 </details>
 
 <details>
+<summary>What happens if I remove the routing API key?</summary>
 
-<summary>Can I display multiple maps on a website?</summary>
-
-Absolutely.
-
-You can create as many maps as you need and display them on any supported content type.
-
+Previously saved road routes remain available. New or changed routes use the straight-line fallback until another valid key is connected.
 </details>
 
 <details>
+<summary>Can I use custom post types?</summary>
 
+Yes. When creating a new field group, select any available public post types. You can also add the fields to an existing ACF group with its own location rules.
+</details>
+
+<details>
 <summary>Can I display only points of interest?</summary>
 
-Yes.
+Yes:
 
-Routes and points of interest can be displayed together or independently, depending on your content.
-
+```text
+[bxtr_map route="no" poi="yes"]
+```
 </details>
 
 <details>
+<summary>Can I display only route markers?</summary>
 
-<summary>Can I customise the appearance of the map?</summary>
+Yes:
 
-Yes.
-
-The Setup screen allows you to customise options such as:
-
-* Map height
-* Route colour
-* Marker colour
-* Marker label colour
-
+```text
+[bxtr_map route="yes" poi="no"]
+```
 </details>
 
 <details>
+<summary>Can I place multiple maps on one page?</summary>
 
-<summary>Can I use the shortcode inside page builders?</summary>
-
-Yes.
-
-The shortcode can be used anywhere shortcodes are supported, including most page builders and block editors.
-
+Yes. Each rendered map receives a unique ID. Pass the correct post ID to each shortcode when the maps use different content.
 </details>
 
 <details>
+<summary>Can I use the shortcode in a page builder or loop?</summary>
 
-<summary>Which map provider does the plugin use?</summary>
-
-Baxtersweb Maps uses **OpenStreetMap**, an open-source mapping platform.
-
+Yes. Use `[bxtr_map]` when the current post is unambiguous, or `[bxtr_map id="123"]` when rendering a specific content item.
 </details>
 
 <details>
+<summary>Does the plugin provide turn-by-turn navigation?</summary>
 
-<summary>Do I need an API key?</summary>
-
-An API key is **not required** to display interactive maps or points of interest.
-
-However, if you want Baxtersweb Maps to **automatically calculate routes** between route points, you'll need a free API key from a supported routing provider.
-
-Once you've obtained your API key, simply enter it in the plugin settings to enable automatic route calculations.
-
-> **Tip:** A free API key is suitable for most websites. If your project requires a high volume of routing requests, you may need to upgrade to a paid plan offered by your chosen routing provider.
-
+No. It displays an interactive route overview and location popups. It is not a live navigation system.
 </details>
 
 <details>
+<summary>Are routes recalculated on every page view?</summary>
 
-<summary>Where can I see a working example?</summary>
-
-Visit the [Baxtersweb Maps Demo](https://baxtersweb.com/baxtersweb-maps-demo/) to see the plugin in action and explore practical use cases.
-
+No. Road geometry is saved in WordPress and reused. It is recalculated when route coordinates change, when missing routes are refreshed after connecting a valid key, or when an unrouted map first needs geometry.
 </details>
 
 <details>
+<summary>Can I change one map without changing all maps?</summary>
 
-<summary>How do I get support?</summary>
+The `route` and `poi` shortcode attributes provide per-map visibility overrides. Other appearance options are global unless a developer supplies a named configuration through the `bxtr_template_config` filter.
+</details>
 
-If you need assistance, please visit the official documentation (it's where you are now), [support forum](https://wordpress.org/support/plugin/baxtersweb-maps/).
+<details>
+<summary>Where can I get support?</summary>
 
+Use the [WordPress.org support forum](https://wordpress.org/support/plugin/baxtersweb-maps/) and include the plugin version, WordPress version, relevant error message and steps to reproduce the issue.
 </details>
